@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target)
+    {
+        int start = 0,end=nums.size()-1;
+        int res = end+1;
+        int mid;
+        while(start<=end)
+        {
+            mid=start+(end-start)/2;
+            if(nums[mid]==target)
+                return mid;
+            else if(nums[mid]>target)
+            {
+                res = mid;
+                end = mid - 1;
+            }
+            else
+                start = mid +1;
+        }
+		/*at this point,we can get a conclusion that target is larger than the highest value in the array and is not
+		found and it reaches the end of the vector/array so,as we have initialized res with size() it returns the size()
+		i.e.,last element's index+1;)
+		*/
+        return res;
+    }
+};
