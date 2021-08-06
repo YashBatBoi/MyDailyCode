@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int mySqrt(int x) {
+        if (x == 0) {
+            return 0;
+        }
+        int start = 1, end = x, sqrt;
+        while (start <= end) {
+            int mid = start + (end - start) / 2; //this is the formula for finding the id of the no.
+            if (mid <= x / mid) { //in this we have to do mid*mid we can't do this so we like this
+                sqrt = mid;   
+                start = mid + 1;
+            }
+            else {
+                end = mid - 1;
+            }
+        }
+        return sqrt;
+    }
+};
