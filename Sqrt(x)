@@ -1,0 +1,23 @@
+var mySqrt = function(x) {
+    if (x === 0) {
+        return 0;
+    }
+    let start = 0;
+    let end = x;
+     
+    while (start + 1 < end) {
+        let mid = start + (end - start) / 2;  //this is formula for finding mid value of x
+        if (mid * mid == x) {
+            return Math.floor(mid);
+        } else if (mid * mid < x) {
+            start = mid;
+        } else {
+            end = mid;
+        }
+    }
+    
+    if (end * end == x) {
+        return Math.floor(end);
+    }
+    return Math.floor(start);
+};
