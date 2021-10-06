@@ -9,7 +9,7 @@ var lengthOfLastWord = function(s) {
             break;
         }
         
-        // this if check that is string haven't reach to a space so it continues the count++ till            find a space
+        // this if check that is string haven't reach to a space so it continues the count++ till find a space
         if(s[i] != " ") {
             count++;
         }
